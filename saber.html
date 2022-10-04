@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May the 4th</title>
+    <link rel="stylesheet" href="saber.css"> 
+</head>
+<body>
+    <label class="options" for="green">Jedi Consular</label>
+    <input type="radio" id="green" name="color" checked>
+    <label class="options" for="blue">Jedi Guardian</label>
+    <input type="radio" id="blue" name="color">
+    <label class="options" for="yellow">Jedi Sentinel</label>
+    <input type="radio" id="yellow" name="color">
+    <label class="options" for="purple">Balance</label>
+    <input type="radio" id="purple" name="color">
+    <label class="options" for="red">Sith</label>
+    <input type="radio" id="red" name="color">
+    <label class="options" for="darksaber">Darksaber</label>
+    <input type="radio" id="darksaber" name="color">
+
+    <div class="lightsaber">
+    <input type="checkbox" id="on-off" onchange="audioHandler(this)">
+    <div class="blade"></div>
+    <label class="hilt" for="on-off"></label>
+    <script>
+        var audio = new Audio('https://assets.codepen.io/308367/coolsaber.mp3');
+        audio.oncanplay = function() {
+            if (document.getElementById("on-off").checked) 
+                this.play()
+        }
+        function audioHandler(el) {    
+            if (el.checked) {
+                audio.load();
+            }
+        }
+    </script>
+    </div>
+
+</body>
+</html>
+
+
+
